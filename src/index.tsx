@@ -2,18 +2,7 @@ import React from "react";
 import { Button, Box, Typography, Link, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-const Copyright: React.FC = () => {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://511v41.github.io/">
-        511V41
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
+import Copyright from "./components/copyright";
 
 const useStyles = makeStyles(theme => ({
   paper: {

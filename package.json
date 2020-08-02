@@ -6,10 +6,12 @@
     "build": "parcel build index.html --target browser",
     "watch": "run-p --print-label watch:*",
     "watch:build": "parcel serve index.html --target browser",
-    "watch:lint": "esw --watch --color --cache --ext ts .",
+    "watch:lint": "esw --watch --color --cache --ext tsx .",
+    "watch:type": "tsc -w --noEmit",
     "lint": "eslint --ignore-path .gitignore --ext .tsx .",
     "fix": "yarn lint --fix",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "type-check": "tsc --noEmit"
   },
   "repository": "git@github.com:511V41/che-reader.git",
   "author": "511V41 <yukkuri.sinai@gimail.com>",
