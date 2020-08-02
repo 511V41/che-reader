@@ -1,0 +1,45 @@
+{
+  "name": "che-reader",
+  "version": "0.0.1",
+  "description": "che reader",
+  "scripts": {
+    "build": "parcel build index.html --target browser",
+    "watch": "run-p --print-label watch:*",
+    "watch:build": "parcel serve index.html --target browser",
+    "watch:lint": "esw --watch --color --cache --ext ts .",
+    "lint": "eslint --ignore-path .gitignore --ext .tsx .",
+    "fix": "yarn lint --fix",
+    "clean": "rimraf dist/*"
+  },
+  "repository": "git@github.com:511V41/che-reader.git",
+  "author": "511V41 <yukkuri.sinai@gimail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@mysticatea/eslint-plugin": "^13.0.0",
+    "@types/node": "^12.12.7",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-typescript": "^6.1.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-tsc": "^1.2.0",
+    "eslint-watch": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
