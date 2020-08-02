@@ -34,9 +34,9 @@ const Index: React.FC = () => {
           CHE READER
         </Typography>
         <Typography component="p" variant="subtitle1">
-          <a href="https://www.artdink.co.jp/japanese/title/che/">
+          <Link href="https://www.artdink.co.jp/japanese/title/che/">
             カルネージハートエクサ
-          </a>
+          </Link>
           からエクスポートしたチームデータの内容を確認することができます。
         </Typography>
         <Typography component="p" variant="caption">
