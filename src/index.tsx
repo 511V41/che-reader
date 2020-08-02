@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Box, Typography, Link, Container } from "@material-ui/core";
+import { Box, Typography, Link, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Copyright from "./components/copyright";
+import Opener from "./components/opener";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -33,9 +34,7 @@ const Index: React.FC = () => {
         </Typography>
       </div>
       <Box mt={4}>
-        <Button fullWidth variant="contained" color="primary">
-          Open
-        </Button>
+        <Opener />
       </Box>
       <Box mt={5}>
         <Copyright />
