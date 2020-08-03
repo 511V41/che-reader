@@ -24,9 +24,14 @@ const Header: React.FC = () => {
           カルネージハートエクサ
         </Link>
         からエクスポートしたチームデータの内容を確認することができます。
+        複数のファイルを同時に開くこともできます。
       </Typography>
       <Typography component="p" variant="caption">
-        ※ インターネットへのアップロードは行いません。内容を確認するだけです。
+        ※
+        インターネットへのアップロードは行いません。内容を確認するだけです。バグを発見した場合は
+        <Link href="https://github.com/511V41/che-reader/issues">issue</Link>か
+        <Link href="mailto:yukkuri.sinai@gmail.com">メール</Link>
+        でご一報ください。
       </Typography>
     </div>
   );
