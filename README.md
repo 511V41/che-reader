@@ -2,6 +2,8 @@
 
 [カルネージハートエクサ](https://www.artdink.co.jp/japanese/title/che/)からエクスポートしたチームデータを閲覧できるWebサービスです。
 
+[CHE READER](https://511v41.github.io/che-reader/)から使えます。
+
 ## Licence
 
 MIT

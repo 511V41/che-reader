@@ -11,7 +11,8 @@
     "lint": "eslint --ignore-path .gitignore --ext .tsx .",
     "fix": "yarn lint --fix",
     "clean": "rimraf dist/*",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "repository": "git@github.com:511V41/che-reader.git",
   "author": "511V41 <yukkuri.sinai@gimail.com>",
@@ -32,6 +33,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-tsc": "^1.2.0",
     "eslint-watch": "^6.0.1",
+    "gh-pages": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.0.0-beta.1",
     "prettier": "^1.19.1",
