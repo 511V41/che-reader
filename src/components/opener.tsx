@@ -1,9 +1,15 @@
 import React from "react";
 
-import { Buffer } from "buffer/";
 import { Button } from "@material-ui/core";
 
-const Opener: React.FC = () => {
+import decode from "../decoder/decoder";
+import { Team } from "../models/team";
+
+type Props = {
+  addTeam: (filename: string, team: Team | undefined) => void;
+};
+
+const Opener: React.FC<Props> = (props: Props) => {
   const onClick = (): void => {
     const input = global.document.createElement("input");
     input.setAttribute("type", "file");
@@ -19,7 +25,9 @@ const Opener: React.FC = () => {
             // eslint-disable-next-line prefer-destructuring
             const result = reader.result as ArrayBuffer;
             const buffer = Buffer.from(result);
-            console.info(currentTarget, buffer);
+            decode(buffer).then(team => {
+              props.addTeam(currentTarget.name, team);
+            });
           };
           reader.readAsArrayBuffer(currentTarget);
         }
