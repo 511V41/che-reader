@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import "regenerator-runtime/runtime";
 import React from "react";
 import ReactDom from "react-dom";
 
