@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   Button,
-  // Divider,
+  Divider,
   Typography,
   Link,
   List,
@@ -16,8 +16,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBtc, faEthereum } from "@fortawesome/free-brands-svg-icons";
 
+import DonateFromMetaMask from "./donateFromMetaMask";
 import isMetaMaskEnabled from "../utils/isMetaMaskEnabled";
-// import donateFromMetaMask from "../utils/donateFromMetaMask";
 
 type Props = {
   bitcoin: string;
@@ -26,7 +26,7 @@ type Props = {
 
 const Donate: React.FC<Props> = (props: Props) => {
   const metamask = isMetaMaskEnabled();
-  console.info("metamask", metamask);
+  // 寄付画面のモーダル
   const [open, setOpen] = useState(false);
   const onOpen = (): void => {
     setOpen(true);
@@ -34,7 +34,12 @@ const Donate: React.FC<Props> = (props: Props) => {
   const onClose = (): void => {
     setOpen(false);
   };
-
+  // MetaMask系
+  const [openMetaMask, setOpenMetaMask] = useState(false);
+  const openDonateFromMetaMask = (): void => {
+    onClose();
+    setOpenMetaMask(true);
+  };
   return (
     <>
       <Typography variant="body2" color="textSecondary" align="center">
@@ -56,11 +61,10 @@ const Donate: React.FC<Props> = (props: Props) => {
               </ListItemIcon>
               <ListItemText primary={props.ethereum} />
             </ListItem>
-            {/*
             {metamask && (
               <>
                 <Divider />
-                <ListItem button onClick={donateFromMetaMask}>
+                <ListItem button onClick={openDonateFromMetaMask}>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faEthereum} />
                   </ListItemIcon>
@@ -68,7 +72,6 @@ const Donate: React.FC<Props> = (props: Props) => {
                 </ListItem>
               </>
             )}
-             */}
           </List>
         </DialogContent>
         <DialogActions>
@@ -77,6 +80,13 @@ const Donate: React.FC<Props> = (props: Props) => {
           </Button>
         </DialogActions>
       </Dialog>
+      <DonateFromMetaMask
+        ethereum={props.ethereum}
+        open={openMetaMask}
+        onClose={(): void => {
+          setOpenMetaMask(false);
+        }}
+      />
     </>
   );
 };

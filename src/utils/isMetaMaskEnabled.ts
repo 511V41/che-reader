@@ -1,8 +1,8 @@
+import { getWindow } from "./myWindow";
+
 const isMetaMaskEnabled = (): boolean => {
-  // eslint-disable-next-line
-  const myWindow: any = window;
-  const { ethereum } = myWindow;
-  if (!ethereum || !ethereum.isMetaMask || ethereum.chainId !== "0x1") {
+  const { ethereum } = getWindow();
+  if (!ethereum || !ethereum.isMetaMask) {
     return false;
   }
   return true;
