@@ -11,6 +11,7 @@ import {
   DialogContent,
   DialogActions
 } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
@@ -59,8 +60,23 @@ const DonateFromMetaMask: React.FC<Props> = (props: Props) => {
     setChain(chainId);
   });
 
-  // TODO 0x1以外では怒る
-  console.info(chain);
+  if (chain !== "0x1") {
+    return (
+      <Dialog open={props.open} fullWidth>
+        <DialogTitle style={{ textAlign: "center" }}>
+          Donation from MetaMask
+        </DialogTitle>
+        <DialogContent>
+          <Alert severity="warning">Please switch to main network</Alert>
+        </DialogContent>
+        <DialogActions>
+          <Button color="primary" onClick={onClose}>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    );
+  }
 
   if (!isMetaMaskConnected() || !account) {
     return <ConnectToMetaMask onClose={onClose} />;
