@@ -1,5 +1,3 @@
-import { faEthereum } from "@fortawesome/free-brands-svg-icons";
-
 export interface MyWindow extends Window {
   // eslint-disable-next-line
   ethereum?: any;
